@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Favorite Quotes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let quote of quotes">
+    <ion-card-header>
+        <p>{{quote.text}}</p>
+    </ion-card-header>
+    <ion-card-content>
+        <p class="byline">{{quote.person}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col text-right>
+        <ion-button
+        fill="clear"
+        size="small"
+        >Unfavorite</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

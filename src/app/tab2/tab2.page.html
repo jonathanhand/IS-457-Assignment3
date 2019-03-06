@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Quotes Library
+    </ion-title>
+    <ion-title>
+      by Fisher Wu 018791615
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<h3 text-center>Select your Favorite Quotes</h3>
+<ion-content padding>
+  <ion-list *ngFor="let quoteGroup of quoteCollection">
+    <ion-item>
+      <ion-label>
+        <ion-icon [name] ="quoteGroup.icon"></ion-icon>
+        <h2>{{quoteGroup.category | uppercase}}</h2>
+        <p>{{quoteGroup.quotes.length}} quotes</p>
+      </ion-label>
+    </ion-item>
+    <ion-list *ngFor="let quoteDetail of quoteGroup.quotes; let i=index">
+      <ion-item>
+        <ion-label text-wrap (click)="onAddFavorite(quoteDetail)">
+          <h2>{{i+1}} {{quoteDetail.person}}</h2>
+          <p>{{quoteDetail.text}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>
