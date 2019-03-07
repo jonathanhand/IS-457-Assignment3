@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ person }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+  <ion-card-content>
+    {{ text }}
+  </ion-card-content>
+  <ion-row>
+    <ion-col text-right>
+      <ion-button
+      fill="clear"
+      size="small"
+      color="danger"
+      (click) ="onClose(true)"
+      >Unfavorite</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-card>
+<ion-button color="danger" (click) ="onClose()">Close</ion-button>
+</ion-content>
