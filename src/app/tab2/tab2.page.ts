@@ -26,27 +26,13 @@ export class Tab2Page implements OnInit {
       component: QuotedetailPage, componentProps: quote
     });
     await modal.present();
-  /*
-  async onAddFavorite(selectQuote: Quotes) {
-    const alert = await this.alertCtrl.create({
-      header: 'Add Quote',
-      subHeader: 'Are you sure?',
-      message: 'Are you sure you want to add the quote?',
-      buttons: [
-        {
-          text: 'Confirm',
-          handler: () => {
-            this.quoteService.addQuoteFavorite(selectQuote);
-          }
-        },
-        {
-          text: 'Not confirm',
-          role: 'cancel',
-          handler: () => {console.log('Cancelled'); },
-        }
-      ]
+    modal.onDidDismiss().then((add: any) => {
+      if (add.data) {
+        this.onAddQuoteFavorite(quote);
+      }
     });
-    await alert.present();
-    */
+  }
+  onAddQuoteFavorite(quote: Quotes) {
+    this.quoteService.addQuoteFavorite(quote);
   }
 }

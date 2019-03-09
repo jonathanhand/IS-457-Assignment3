@@ -12,7 +12,7 @@ export class QuotedetailPage implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private navParams: NavParams) { }
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     this.person = this.navParams.get('item');
     this.text = this.navParams.get('desc');
   }
