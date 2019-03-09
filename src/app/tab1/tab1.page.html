@@ -20,6 +20,9 @@
         <ion-button
         fill="clear"
         size="small"
+        color="danger"
+        (click)="onRemoveFromFavorites(quote)"
+        *ngIf="isFavorite(quote)"
         >Unfavorite</ion-button>
       </ion-col>
     </ion-row>

@@ -14,4 +14,12 @@ export class Tab1Page {
   ionViewWillEnter() {
     this.quotes = this.quoteService.getFavoriteQuote();
   }
+  onRemoveFromFavorites(quote: Quotes) {
+    this.quoteService.removeQuoteFromFavorite(quote);
+    this.quotes = this.quoteService.getFavoriteQuote();
+
+  }
+  isFavorite(quote: Quotes) {
+    return this.quoteService.isQuoteFavorite(quote);
+  }
 }
